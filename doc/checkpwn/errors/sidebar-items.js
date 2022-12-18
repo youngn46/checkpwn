@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":[["BUFREADER_ERROR",""],["MISSING_API_KEY",""],["READLINE_ERROR",""],["READ_FILE_ERROR",""],["USAGE_ERROR","All the different errors for checkpwn; Errors that are meant to be internal or or unreachable print this."]],"macro":[["set_checkpwn_panic","Set panic hook, to have .unwrap(), etc, return the custom panic message."]]};

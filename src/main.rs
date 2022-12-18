@@ -49,6 +49,11 @@ use std::panic;
 use std::process::Command;
 use zeroize::Zeroize;
 
+/// <b>MAIN.RS DOCUMENTATION<br>
+/// Rowan ADV PROGRAMMING WRKSHP:RUST Fall 2022<br>
+/// Professor Ganesh Chandrasekaran<br>
+/// Final Project Due December 20, 2022<br>
+/// Neil Young</b>
 fn main() -> Result<()> {
     // Set custom usage panic message
     set_checkpwn_panic!(errors::USAGE_ERROR);
@@ -107,22 +112,23 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-/// Make a breach report based on a u16 status code and print result to terminal.
+/// Make a breach report based on a u16 status code and print result to terminal.<br>
+/// <b>Added source of breach data notice to breach_report function</b>
 fn breach_report(breached: bool, searchterm: &str, is_password: bool) {
     // Do not display password in terminal
     let request_key = if is_password { "********" } else { searchterm };
 
     if breached {
         println!(
-            "Breach status for {}: {}",
+            "Source of breach data: haveibeenpwned.com\n Breach status for {}: {}",
             request_key.cyan(),
-            "BREACH FOUND".red()
+            "BREACH FOUND".red(),
         );
     } else {
         println!(
-            "Breach status for {}: {}",
+            "Source of breach data: haveibeenpwned.com\n Breach status for {}: {}",
             request_key.cyan(),
-            "NO BREACH FOUND".green()
+            "NO BREACH FOUND".green(),
         );
     }
 }
